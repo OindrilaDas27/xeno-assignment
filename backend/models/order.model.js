@@ -10,6 +10,10 @@ const orderSchema = new Schema({
     customerId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Customer'
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
 })
 

@@ -1,8 +1,11 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+
 const customerRouter = require('./routes/customer.route');
 const orderRouter = require('./routes/order.route');
+const userRouter = require('./routes/user.route');
+const segmentRouter = require('./routes/segment.route');
 
 dotenv.config();
 const app = express();
@@ -11,12 +14,10 @@ app.use(express.json());
 const PORT = 8080;
 const uri = process.env.MONGO_URI;
 
-// app.listen(PORT, () => {
-//     console.log(`Server is running on port ${PORT}`);
-// });
-
 app.use('/api/customer', customerRouter);
 app.use('/api/order', orderRouter);
+app.use('/api/user', userRouter);
+app.use('/api/segment', segmentRouter);
 
 mongoose.connect(uri);
 
