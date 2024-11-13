@@ -1,0 +1,22 @@
+.container {
+    width: 100vw;
+}
+
+.components {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.segments {
+    width: 60vw;
+    height: 100vh;
+    padding: 1.6rem;
+    border-right: 2px solid #000;
+}
+
+.campaigns {
+    width: 40vw;
+    height: 100vh;
+    padding: 1.6rem;
+}

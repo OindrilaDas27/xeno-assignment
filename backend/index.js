@@ -6,10 +6,18 @@ const customerRouter = require('./routes/customer.route');
 const orderRouter = require('./routes/order.route');
 const userRouter = require('./routes/user.route');
 const segmentRouter = require('./routes/segment.route');
+const cors = require('cors')
 
 dotenv.config();
 const app = express();
 app.use(express.json());
+
+app.use(
+    cors({
+        origin: ["http://localhost:3000"],
+        methods: "GET,POST,PUT,DELETE,OPTIONS",
+    })
+);
 
 const PORT = 8080;
 const uri = process.env.MONGO_URI;

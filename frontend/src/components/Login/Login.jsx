@@ -2,32 +2,52 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from '../Login/Login.module.css';
 import React from "react";
+import { GoogleLogin } from "@react-oauth/google";
+import axios from 'axios';
+import { LOGIN_ENDPOINT } from "../../utils/endpoints";
 
 const Login = () => {
-    const [username, setUsername] = useState(undefined);
-    const [password, setPassword] = useState(undefined);
+    const navigate = useNavigate();
 
-    // const navigate = useNavigate();
+    const handleLogin = async (credentialResponse) => {
+        const idToken = credentialResponse.credential;
+
+        try {
+            const response = await axios.post(LOGIN_ENDPOINT, { idToken });
+            const { token, user } = response.data;
+
+            // Store token in local storage
+            localStorage.setItem('token', token);
+            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('userName', user.name);
+
+            alert(`Welcome, ${user.name}`);
+
+            // Navigate to /campaigns after successful login
+            navigate('/campaigns');
+        } catch (error) {
+            console.error('Login failed', error);
+            alert('Google login failed. Please try again.');
+        }
+    };
 
     return (
         <div className={styles.container}>
             <div className={styles.login_box}>
                 <div className={styles.login_text}>
-                    Login
+                    Log In
                 </div>
-                <form className={styles.form_container}>
-                    <input type="text" placeholder="username" name="username" value={username ? username : ""} className={styles.input_field} />
-                    <input type="password" placeholder="Password" name="password" value={password ? password : ""} className={styles.input_field}  />
-                    <div className={styles.btn_container}>
-                        <button type="submit" className={styles.signin_button} >Login</button>
-                    </div>
-                </form>
                 <div className={styles.signup_redirect_wrapper}>
-                    Don't have an account? <Link to="/signup" className={styles.link}>Sign Up</Link>
+                    Sign In with Google 
+                    <div style={{ marginTop: '1rem'}}></div>
+                    <GoogleLogin
+                    onSuccess={handleLogin}
+                    onError={() => console.log('Login Failed')}
+                />
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Login;

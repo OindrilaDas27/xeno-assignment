@@ -1,15 +1,19 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';import Login from './components/Login/Login';
-import Signup from './components/Signup/SIgnup';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'; import Login from './components/Login/Login';
+import Campaigns from './components/Campaigns/Campaigns';
+import { GoogleOAuthProvider } from '@react-oauth/google'
 
 function App() {
   return (
-    <BrowserRouter>
-     <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
-    </BrowserRouter>
+    <GoogleOAuthProvider clientId="559746045934-etugrnpe8nhp5mifpdsmbep4ghkegajk.apps.googleusercontent.com">
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Navigate to='/login' />} />
+          <Route path="/campaigns" element={<Campaigns />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+    </GoogleOAuthProvider>
   );
 }
 
