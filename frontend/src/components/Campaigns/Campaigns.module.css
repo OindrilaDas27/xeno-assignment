@@ -1,5 +1,7 @@
 .container {
     width: 100vw;
+    height: 100vh;
+    background-color: #fff3bc;
 }
 
 .components {
@@ -10,13 +12,13 @@
 
 .segments {
     width: 60vw;
-    height: 100vh;
-    padding: 1.6rem;
+    max-height: 100vh;
     border-right: 2px solid #000;
+    padding: 1.6rem 1.6rem 0 1.6rem;
 }
 
 .campaigns {
     width: 40vw;
-    height: 100vh;
-    padding: 1.6rem;
+    /* height: 100vh; */
+    padding: 1.6rem 1.6rem 0 1.6rem;
 }

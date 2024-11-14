@@ -1,6 +1,4 @@
 const User = require('../models/user.model');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const jwt = require('jsonwebtoken');
 const { OAuth2Client } = require('google-auth-library');
 

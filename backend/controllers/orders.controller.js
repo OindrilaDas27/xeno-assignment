@@ -18,7 +18,8 @@ const createOrder = async (req, res) => {
 
         const saveOrder = await newOrder.save();
 
-        customer.orderIds.push(saveOrder._id);
+        customer.countVisits += 1;
+        customer.totalSpending += saveOrder.cost;
         await customer.save();
 
         res.status(200).json({message: "Order created successfully!", order: saveOrder, customer});

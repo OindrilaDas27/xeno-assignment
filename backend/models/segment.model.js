@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const segmentSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
     query: {
         type: String,
         required: true

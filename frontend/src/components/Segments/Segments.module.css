@@ -1,3 +1,7 @@
+.segments {
+    height: 100%;
+}
+
 .create_segments {
     display: flex;
     flex-direction: column;
@@ -19,6 +23,7 @@
     width: 6rem;
     height: 1rem;
     padding: 0.5rem 1rem;
+    background-color: #fff3bc;
 }
 
 .btn_container {
@@ -40,4 +45,30 @@
     margin-top: 10px;
     border-radius: .5rem;
     cursor: pointer;
+}
+
+.segment_output {
+    height: 70vh;
+    font-size: 1.125rem;
+    overflow: scroll;
+}
+
+.segment_output span {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.customer_details {
+    width: 80%;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+    border-radius: 1rem;
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

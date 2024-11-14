@@ -7,13 +7,13 @@ const customerSchema = new Schema({
         type: String,
         required: true
     },
-    orderIds: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Order'
-    }],
+    totalSpending: {
+        type: Number,
+        default: 0
+    },
     countVisits: {
         type: Number,
-        required: true
+        default: 0
     }
 })
 

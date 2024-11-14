@@ -4,7 +4,9 @@ const Order = require('../models/order.model');
 
 const createSegment = async (req, res) => {
     try {
-        const { query, userId } = req.body;
+        const { name, query } = req.body;
+        const userId = req.user._id;
+        console.log(userId);
 
         const conditions = parseQueryToConditions(query);
         console.log("Parsed Conditions: ", conditions);
@@ -29,6 +31,7 @@ const createSegment = async (req, res) => {
         console.log(customerIds)
 
         const newSegment = new Segment({
+            name: name,
             query: query,
             userId: userId,
             customerSize: customerSize,
@@ -97,5 +100,30 @@ function parseCondition(part) {
     return null;
 }
 
+const getAllSegments = async(req, res) => {
+    try {
+        const segmets = await Segment.find({ });
+        res.status(200).json({Segments: segmets});
+    } catch (error) {
+        console.log("Error getting all Segments: ", error);
+        return res.status(400).json(error);
+    }
+}
 
-module.exports = { createSegment };
+const getSegmentById = async(req, res) => {
+    try {
+        const segmentId = req.params.id;
+        const segment = await Segment.findById(segmentId);
+        if(!segment) {
+            return res.status(400).json({message: "Segment not found"});
+        };
+
+        res.status(200).json(segment);
+    } catch (error) {
+        console.log("Error getting Segment: ", error);
+        return res.status(400).json(error);
+    }
+}
+
+
+module.exports = { createSegment, getAllSegments, getSegmentById };

@@ -16,14 +16,13 @@ const Login = () => {
             const response = await axios.post(LOGIN_ENDPOINT, { idToken });
             const { token, user } = response.data;
 
-            // Store token in local storage
             localStorage.setItem('token', token);
             localStorage.setItem('user', JSON.stringify(user));
             localStorage.setItem('userName', user.name);
+            console.log(token);
 
             alert(`Welcome, ${user.name}`);
 
-            // Navigate to /campaigns after successful login
             navigate('/campaigns');
         } catch (error) {
             console.error('Login failed', error);

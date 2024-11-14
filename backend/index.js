@@ -6,6 +6,8 @@ const customerRouter = require('./routes/customer.route');
 const orderRouter = require('./routes/order.route');
 const userRouter = require('./routes/user.route');
 const segmentRouter = require('./routes/segment.route');
+const campaignRouter = require('./routes/campaign.route');
+
 const cors = require('cors')
 
 dotenv.config();
@@ -15,7 +17,8 @@ app.use(express.json());
 app.use(
     cors({
         origin: ["http://localhost:3000"],
-        methods: "GET,POST,PUT,DELETE,OPTIONS",
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
     })
 );
 
@@ -26,6 +29,7 @@ app.use('/api/customer', customerRouter);
 app.use('/api/order', orderRouter);
 app.use('/api/user', userRouter);
 app.use('/api/segment', segmentRouter);
+app.use('/api/campaign', campaignRouter);
 
 mongoose.connect(uri);
 
