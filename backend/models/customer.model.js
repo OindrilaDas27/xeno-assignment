@@ -10,7 +10,11 @@ const customerSchema = new Schema({
     orderIds: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Order'
-    }]
+    }],
+    countVisits: {
+        type: Number,
+        required: true
+    }
 })
 
 module.exports = mongoose.model('Customer', customerSchema);

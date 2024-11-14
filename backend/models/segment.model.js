@@ -14,7 +14,11 @@ const segmentSchema = new Schema({
     customerSize: {
         type: Number,
         default: 0
-    }
+    },
+    customerIds: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Customer'
+    }]
 });
 
 module.exports = mongoose.model('Segment', segmentSchema);
