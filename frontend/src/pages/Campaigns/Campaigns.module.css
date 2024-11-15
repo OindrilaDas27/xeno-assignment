@@ -1,0 +1,79 @@
+.container {
+    height: 100vh;
+    background-color: #fff3bc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.campaignForm {
+    width: 50%;
+    height: fit-content;
+    padding: 2rem 4rem;
+    background-color: #fff3bc;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 2rem;
+    margin-top: 4rem;
+}
+
+.campaign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.content p {
+    margin-right: 4rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.content input {
+    width: 70%;
+    height: 3rem;
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+    background-color: #fff3bc;
+}
+
+.msg p {
+    color: #5a5a5a;
+}
+
+.msg textarea {
+    width: 95%;
+    min-width: 3rem;
+    padding: 1rem;
+    resize: vertical;
+    background-color: #fff3bc;
+    border-radius: 1rem;
+}
+
+.btn_container {
+    margin-top: 2rem;
+}
+
+.btn_container button {
+    width: 8rem;
+    padding: 1rem;
+    font-size: .875rem;
+    border: none;
+    background-color: #000;
+    color: #fff3bc;
+    font-weight: 600;
+    margin-top: 10px;
+    border-radius: .5rem;
+    cursor: pointer;
+}

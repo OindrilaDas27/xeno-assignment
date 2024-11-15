@@ -1,0 +1,59 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff3bc;
+}
+
+.components {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campaigns {
+    padding: 2rem;
+    border-bottom: 2px solid #000;
+}
+
+.topBar {
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 1rem;
+}
+
+.container button {
+    height: 1rem;
+    width: 10rem;
+    padding: 1rem 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 0.8rem;
+    background-color: #000;
+    color: #fff3bc;
+    cursor: pointer;
+}
+
+.table {
+    height: 16rem;
+    width: 90vw;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    overflow-y: scroll;
+}
+
+.contentDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #000;
+}
+
+.segments {
+    padding: 2rem 2rem 0;
+}

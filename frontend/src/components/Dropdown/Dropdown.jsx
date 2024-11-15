@@ -8,6 +8,8 @@ const Dropdown = ({ label, options = [], onSelect, selectedOption }) => {
     };
 
     const handleSelect = (option) => {
+        // option.preventDefault();
+        // option.stopPropagation();
         onSelect && onSelect(option);
         setIsOpen(false);
     };
@@ -16,6 +18,7 @@ const Dropdown = ({ label, options = [], onSelect, selectedOption }) => {
             <button
                 onClick={toggleDropdown}
                 className={styles.dropdown_btn}
+                type='button'
             >
                 {selectedOption || label}
             </button>

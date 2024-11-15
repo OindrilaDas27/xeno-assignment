@@ -1,0 +1,30 @@
+.table {
+    height: 16rem;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: 2px solid #000;
+    overflow-y: scroll;
+}
+
+.table button {
+    height: 1rem;
+    width: 12rem;
+    padding: 1rem 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 0.8rem;
+    background-color: #000;
+    color: #fff3bc;
+    cursor: pointer;
+}
+
+.contentDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #000;
+}

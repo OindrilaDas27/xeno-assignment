@@ -30,6 +30,7 @@ const createNewCampaign = async (req, res) => {
                     message: individualMessage,
                     campaignId: newCampaign._id,
                     customerId: customerId,
+                    customerName: customer.name,
                     status: Math.floor(Math.random() * 51) + 50
                 });
 
@@ -67,7 +68,16 @@ const getCampaignById = async (req, res) => {
             return res.status(400).json("The Campaign does not exist");
         }
 
-        res.status(200).json(campaign);
+        const messages = [];
+        const message = await Message.find({ campaignId: campaignId });
+        messages.push(message);
+        console.log(messages);
+
+        if(messages.length===0) {
+            return res.status(400).json("No Message Found");
+        }
+
+        res.status(200).json({campaign: campaign, message: messages});
     } catch (error) {
         console.log("Error while creating Campaign: ", error);
         return res.status(400).json({ error: error.message });

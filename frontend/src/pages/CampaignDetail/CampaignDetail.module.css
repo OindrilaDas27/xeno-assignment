@@ -1,0 +1,67 @@
+.campaignDetail {
+    height: 90vh;
+    background-color: #fff3bc;
+    padding: 2rem 4rem 0;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 1rem;
+}
+
+.title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding-right: 1rem;
+    color: rgb(85, 85, 85);
+}
+
+.stats {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.message_container {
+    width: 96%;
+    height: 56%;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    border-radius: 2rem;
+    padding: 2rem;
+    color: #fff3bc;
+}
+
+.scroll {
+    width: 100%;
+    height: 90%;
+    overflow-y: scroll;
+}
+
+.customer_heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    border-bottom: 1px solid #fff3bc;
+}
+
+.customer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    border-bottom: 1px solid #fff3bc;
+}
+
+.details {
+    font-size: 1.5rem;
+    font-weight: 700;
+}

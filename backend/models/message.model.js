@@ -14,6 +14,10 @@ const messgaeSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Customer'
     },
+    customerName: {
+        type: String,
+        required: true
+    },
     status: {
         type: Number,
         max: 100,

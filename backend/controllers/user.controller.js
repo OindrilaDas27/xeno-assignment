@@ -41,7 +41,7 @@ const googleLogin = async(req, res) => {
                 _id: user._id,
             },                 
             process.env.JWT_SECRET, {
-                expiresIn: "1h",
+                expiresIn: "12h",
             })
             res.status(200).json({token, user})
         } else {

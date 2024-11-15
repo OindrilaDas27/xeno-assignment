@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import styles from '../Login/Login.module.css';
+import styles from './Login.module.css';
 import React from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import axios from 'axios';
@@ -23,7 +23,7 @@ const Login = () => {
 
             alert(`Welcome, ${user.name}`);
 
-            navigate('/campaigns');
+            navigate('/feed');
         } catch (error) {
             console.error('Login failed', error);
             alert('Google login failed. Please try again.');

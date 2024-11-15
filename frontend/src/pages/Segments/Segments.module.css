@@ -1,0 +1,147 @@
+.segments {
+    height: 97vh;
+    padding: 2rem 2rem 0;
+    background-color: #fff3bc;
+}
+
+.segments h1 {
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 2px solid #000;
+}
+
+.create_segments {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.name h3 {
+    font-size: 1.25rem;
+    margin-right: 2rem;
+}
+
+.name input {
+    width: 16rem;
+    height: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    font-size: 1.125rem;
+    background-color: #fff3bc;
+}
+
+.writeSegments {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.sentence {
+    width: 450vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.sentence span {
+    padding: 0 1rem;
+    font-weight: 700;
+}
+
+.sentence input {
+    width: 12.6rem;
+    height: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    font-size: 1.125rem;
+    background-color: #fff3bc;
+}
+
+.btn_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    padding: 10px;
+}
+
+.btn_container button {
+    width: 8rem;
+    padding: 1rem;
+    font-size: 14px;
+    border: none;
+    background-color: #000;
+    color: #fff3bc;
+    font-weight: 600;
+    margin-top: 10px;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.segment_output {
+    font-size: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+}
+
+.segment_output span {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.topBar {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.topBar button {
+    width: 12rem;
+    padding: 1rem;
+    font-size: 14px;
+    border: none;
+    background-color: #000;
+    color: #fff3bc;
+    font-weight: 600;
+    margin-top: 10px;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.content {
+    width: 80%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    overflow-y: scroll;
+    border: 1px solid #000;
+    border-radius: 2rem;
+}
+
+.customer_details {
+    width: 80%;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+    border-radius: 1rem;
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
