@@ -32,11 +32,11 @@ const CampaignDetail = () => {
 
     return (
         <div className={styles.campaignDetail}>
-            <h1>Campaign Name</h1>
+            <h1>{campaignData.title}</h1>
             <div className={styles.stats}>
                 <div className={styles.content}>
-                    <p className={styles.title}>Campaign Title: </p>
-                    <p className={styles.details}>{campaignData.title}</p>
+                    <p className={styles.title}>Campaign Msg: </p>
+                    <p className={styles.details}>{campaignData.messageTemplate}</p>
                 </div>
                 <div className={styles.content}>
                     <p className={styles.title}>Audience Size: </p>
@@ -72,7 +72,7 @@ const CampaignDetail = () => {
                     {messages.map((data) => (
                         <div className={styles.customer} key={data._id}>
                             <div>{data.message}</div>
-                            <div>{data.customerName}</div>
+                            <div style={{ marginLeft: "-10rem" }}>{data.customerName}</div>
                             <div>
                                 <PieChart
                                     colors={['#f77979', '#82ff58']}

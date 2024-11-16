@@ -2,6 +2,7 @@ const Campaign = require('../models/campaign.model');
 const Segment = require('../models/segment.model');
 const Customer = require('../models/customer.model');
 const Message = require('../models/message.model');
+const { publishMessage } = require('../utils/publisher');
 
 const createNewCampaign = async (req, res) => {
     try {
@@ -23,24 +24,16 @@ const createNewCampaign = async (req, res) => {
 
         const messages = [];
         for (const customerId of segment.customerIds) {
-            const customer = await Customer.findById(customerId);
-            if (customer) {
-                const individualMessage = messageTemplate.replace('{name}', customer.name);
-                const newMessge = new Message({
-                    message: individualMessage,
-                    campaignId: newCampaign._id,
-                    customerId: customerId,
-                    customerName: customer.name,
-                    status: Math.floor(Math.random() * 51) + 50
-                });
-
-                await newMessge.save();
-                messages.push(newMessge);
+            const msgData = {
+                campaignId: newCampaign._id,
+                messageTemplate: messageTemplate,
+                customerId: customerId,
             }
 
+            await publishMessage('messages', JSON.stringify(msgData));
         }
 
-        res.status(200).json({ Campaign: newCampaign, Messages: messages });
+        res.status(200).json({ Campaign: newCampaign, msg: "Messages are queued" });
     } catch (error) {
         console.log("Error while creating Campaign: ", error);
         return res.status(400).json({ error: error.message });

@@ -1,7 +1,7 @@
 .container {
     width: 100vw;
     height: 100vh;
-    background-color: #fff3bc;
+    background-color: #fff;
 }
 
 .components {
@@ -12,7 +12,7 @@
 
 .campaigns {
     padding: 2rem;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #509ee3;
 }
 
 .topBar {
@@ -30,8 +30,8 @@
     padding: 1rem 1rem 2rem;
     font-size: 1rem;
     border-radius: 0.8rem;
-    background-color: #000;
-    color: #fff3bc;
+    background-color: #509ee3;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -51,7 +51,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #509ee3;
 }
 
 .segments {

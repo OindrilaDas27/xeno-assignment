@@ -1,28 +1,24 @@
 const Order = require('../models/order.model');
 const Customer = require('../models/customer.model');
+const { publishMessage } = require('../utils/publisher');
 
 const createOrder = async (req, res) => {
     try {
-        const { cost, customerId } = req.body;
+        const order = req.body;
 
-        const customer = await Customer.findById(customerId);
+        const customer = await Customer.findById(order.customerId);
 
         if (!customer) {
             return res.status(400).json({ error: "Customer does not exist to create order" });
         }
 
-        const newOrder = new Order({
-            cost: cost,
-            customerId: customerId
-        });
+        if(order.cost==0) {
+            return res.status(400).json({ error: "Order must not be 0" });
+        }
 
-        const saveOrder = await newOrder.save();
+        await publishMessage('orders', JSON.stringify(order));
 
-        customer.countVisits += 1;
-        customer.totalSpending += saveOrder.cost;
-        await customer.save();
-
-        res.status(200).json({message: "Order created successfully!", order: saveOrder, customer});
+        res.status(200).json("Order is queue");
     } catch (error) {
         console.log("Error in create Order: ", error);
         res.status(400).json(error);

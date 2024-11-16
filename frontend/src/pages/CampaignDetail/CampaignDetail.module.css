@@ -1,8 +1,12 @@
 .campaignDetail {
     height: 90vh;
-    background-color: #fff3bc;
+    background-color: #fff;
     padding: 2rem 4rem 0;
     overflow: hidden;
+}
+
+.campaignDetail h1 {
+    color: #509ee3;
 }
 
 .content {
@@ -20,7 +24,7 @@
 }
 
 .stats {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -31,10 +35,10 @@
     height: 56%;
     display: flex;
     flex-direction: column;
-    background-color: #000;
+    background-color: #509ee3;
     border-radius: 2rem;
     padding: 2rem;
-    color: #fff3bc;
+    color: #fff;
 }
 
 .scroll {
@@ -49,7 +53,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 4rem;
-    border-bottom: 1px solid #fff3bc;
+    border-bottom: 1px solid #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
 }
 
 .customer {
@@ -58,10 +64,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 4rem;
-    border-bottom: 1px solid #fff3bc;
+    border-bottom: 1px solid #fff;
+    font-weight: 500;
 }
 
 .details {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
 }

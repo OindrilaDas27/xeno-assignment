@@ -1,6 +1,6 @@
 .container {
     height: 100vh;
-    background-color: #fff3bc;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,12 +11,12 @@
     width: 50%;
     height: fit-content;
     padding: 2rem 4rem;
-    background-color: #fff3bc;
-    color: #000;
+    background-color: #fff;
+    color: #509ee3;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #000;
+    border: 2px solid #509ee3;
     border-radius: 2rem;
     margin-top: 4rem;
 }
@@ -45,7 +45,8 @@
     height: 3rem;
     padding: 0 1rem;
     border-radius: 0.6rem;
-    background-color: #fff3bc;
+    background-color: #fff;
+    border: 2px solid #509ee3;
 }
 
 .msg p {
@@ -57,8 +58,9 @@
     min-width: 3rem;
     padding: 1rem;
     resize: vertical;
-    background-color: #fff3bc;
+    background-color: #fff;
     border-radius: 1rem;
+    border: 2px solid #509ee3;
 }
 
 .btn_container {
@@ -70,8 +72,8 @@
     padding: 1rem;
     font-size: .875rem;
     border: none;
-    background-color: #000;
-    color: #fff3bc;
+    background-color: #509ee3;
+    color: #fff;
     font-weight: 600;
     margin-top: 10px;
     border-radius: .5rem;

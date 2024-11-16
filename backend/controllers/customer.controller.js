@@ -1,4 +1,5 @@
 const Customer = require('../models/customer.model');
+const { publishMessage } = require('../utils/publisher');
 
 const createCustomer = async(req, res) => {
     try {
@@ -6,15 +7,14 @@ const createCustomer = async(req, res) => {
 
         let checkCustomer = await Customer.findOne({ name: customerData.name });
 
-        if(checkCustomer!==null) return res.status(400).send("Customer already exists");
+        if(checkCustomer!==null) return res.status(400).json("Customer already exists");
+        if(customerData.name.length === 0 || customerData.name.length > 100 || !customerData.name) {
+            return res.status(400).json("Name is invalid");
+        }
 
-        const newCustomer = new Customer({
-            name: customerData.name,
-        });
+        await publishMessage('customers', JSON.stringify(customerData));
 
-        const customer = await newCustomer.save();
-
-        res.status(200).json({message: "Created new Customer", customer});
+        res.status(200).json({message: "Customer pushed to queue"});
     } catch (error) {
         console.log('Error in create customer: ', error);
         return res.status(400).json(error);

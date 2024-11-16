@@ -9,7 +9,7 @@
     width: 10rem;
     padding: 0.6rem 1rem;
     cursor: pointer;
-    background-color: #000000;
+    background-color: #509ee3;
     color: white;
     border: none;
     border-radius: 4px;
@@ -17,9 +17,10 @@
 
 .dropdown {
     position: absolute;
-    background-color: rgb(204, 204, 204);
+    background-color: #ffffff;
+    border: .125rem solid #509ee3;
     z-index: 1;
-    width: 10rem;
+    width: 9.75rem;
 }
 
 .content {
@@ -28,6 +29,6 @@
 }
 
 .content:hover {
-    background-color: #000000;
+    background-color: #509ee3;
     color: #fff;
 }

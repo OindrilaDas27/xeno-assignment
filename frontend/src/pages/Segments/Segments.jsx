@@ -32,52 +32,61 @@ const Segments = () => {
 
     const handleSegmentSubmit = async (segment) => {
         segment.preventDefault();
-        console.log("Submit triggered")
-
+        console.log("Submit triggered");
+    
         const segmentSummary = `totalSpending ${totalSpendingComparator} ${totalSpending} ${logicalOperator} orderCount ${visitComparator} ${totalVisits}`;
-
-        console.log(segmentSummary)
-
+    
+        console.log(segmentSummary);
+    
         if (segmentSummary === "totalSpending Select Operators  Select Conjunction orderCount Select Operators ") {
-            alert('Please submit a valid segement query');
+            alert('Please submit a valid segment query');
             return;
         }
-
+    
         try {
             const segmentData = await axios.post(CREATE_SEGMENT_ENDPOINT,
                 {
                     name: segmentName,
-                    query: segmentSummary
+                    query: segmentSummary,
                 },
                 {
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                    }
+                    },
                 }
             );
             console.log(segmentData.data);
+    
             const fetchSegmentCandidates = segmentData.data.saveSegment.customerIds || [];
             setTotalCustomers(segmentData.data.saveSegment.customerSize);
             console.log(fetchSegmentCandidates);
-
+    
             if (fetchSegmentCandidates.length === 0) {
                 alert("No customers found for this segment.");
                 return;
             }
-
-            const customerProms = fetchSegmentCandidates.map((customerId) => (
+    
+            const validCustomerIds = fetchSegmentCandidates.filter((id) => id !== null && id !== undefined);
+    
+            const customerProms = validCustomerIds.map((customerId) => (
                 axios.get(`${GET_CUSTOMER_ENDPOINT}/${customerId}`)
             ));
-
-            const customers = await Promise.all(customerProms);
-            const customerDetails = customers.map(response => response.data);
-
+    
+            const customers = await Promise.all(customerProms.map((promise) => 
+                promise.catch((err) => {
+                    console.error(`Error in customer data: ${err.message}`);
+                    return null; 
+                })
+            ));
+    
+            const customerDetails = customers.filter((data) => data !== null).map((response) => response.data);
+    
             setCustomerData(customerDetails);
         } catch (error) {
             console.log("Error in submitting segment: ", error);
         }
-    };
+    };    
 
     return (
         <div className={styles.segments}>
@@ -147,7 +156,7 @@ const Segments = () => {
                     </div>
                 </div>
             </form>
-            <div style={{ width: "100%", height: "2rem", borderBottom: "1px solid #000", marginBottom: "2rem" }} />
+            <div style={{ width: "100%", height: "2rem", borderBottom: "1px solid #509ee3", marginBottom: "2rem" }} />
             <div className={styles.segment_output}>
                 <div className={styles.topBar}>
                     <p>Total Customers for the segment: <span>{totalCustomers}</span></p>

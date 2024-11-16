@@ -1,13 +1,13 @@
 .segments {
     height: 97vh;
     padding: 2rem 2rem 0;
-    background-color: #fff3bc;
+    background-color: #fff;
 }
 
 .segments h1 {
     width: 100%;
     padding: 1rem 0;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #509ee3;
 }
 
 .create_segments {
@@ -33,7 +33,8 @@
     padding: 0.5rem 1rem;
     border-radius: 0.6rem;
     font-size: 1.125rem;
-    background-color: #fff3bc;
+    background-color: #fff;
+    border: 2px solid #509ee3;
 }
 
 .writeSegments {
@@ -61,7 +62,8 @@
     padding: 0.5rem 1rem;
     border-radius: 0.6rem;
     font-size: 1.125rem;
-    background-color: #fff3bc;
+    background-color: #fff;
+    border: 2px solid #509ee3;
 }
 
 .btn_container {
@@ -77,8 +79,8 @@
     padding: 1rem;
     font-size: 14px;
     border: none;
-    background-color: #000;
-    color: #fff3bc;
+    background-color: #509ee3;
+    color: #fff;
     font-weight: 600;
     margin-top: 10px;
     border-radius: .5rem;
@@ -111,8 +113,8 @@
     padding: 1rem;
     font-size: 14px;
     border: none;
-    background-color: #000;
-    color: #fff3bc;
+    background-color: #509ee3;
+    color: #fff;
     font-weight: 600;
     margin-top: 10px;
     border-radius: .5rem;
@@ -127,7 +129,7 @@
     align-items: center;
     padding: 1rem 0;
     overflow-y: scroll;
-    border: 1px solid #000;
+    border: 1px solid #509ee3;
     border-radius: 2rem;
 }
 
@@ -135,7 +137,7 @@
     width: 80%;
     margin: 1rem;
     padding: 1rem 2rem;
-    background-color: #000;
+    background-color: #509ee3;
     color: #fff;
     border-radius: 1rem;
 }
