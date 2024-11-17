@@ -20,7 +20,7 @@ const app = express();
 app.use(
     express.json(),
     cors({
-        origin: ["http://localhost:3000"],
+        origin: [process.env.FRONTEND_URI],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization'],
     })
