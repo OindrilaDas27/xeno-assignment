@@ -22,7 +22,6 @@ const createNewCampaign = async (req, res) => {
             res.status(400).json({ error: "Segment not found" });
         }
 
-        const messages = [];
         for (const customerId of segment.customerIds) {
             const msgData = {
                 campaignId: newCampaign._id,

@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080/api";
+const BASE_URL = "https://oindrila-xeno-backend.onrender.com/api";
 
 const LOGIN_ENDPOINT = BASE_URL + '/user/google-login';
 const GET_CUSTOMER_ENDPOINT = BASE_URL + '/customer'
