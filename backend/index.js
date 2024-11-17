@@ -20,7 +20,7 @@ const app = express();
 app.use(
     express.json(),
     cors({
-        origin: [process.env.FRONTEND_URI],
+        origin: ["https://xeno-assignment-frontend.onrender.com"],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization'],
     })
